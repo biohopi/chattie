@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#0a1118" />
+    <meta name="description" content="LAST LIGHT — a mobile-first tactical survival experience." />
+    <title>LAST LIGHT — Tactical Survival</title>
+  </head>
+  <body>
+    <div id="scene" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <main id="app">
+      <header class="topbar">
+        <a class="wordmark" href="#" aria-label="Last Light home"><span class="mark">L</span><span>LAST<span class="muted">LIGHT</span></span></a>
+        <div class="top-meta"><span class="status-dot"></span><span>FIELD SYSTEMS ONLINE</span><span class="build-tag">PRE-ALPHA · 0.1</span></div>
+        <button class="icon-button" data-action="fullscreen" aria-label="Toggle fullscreen" title="Fullscreen">⛶</button>
+      </header>
+      <section class="hero" id="launch-screen">
+        <div class="eyebrow"><span class="line"></span> SURVIVE THE LAST LIGHT <span class="line"></span></div>
+        <h1>DROP INTO<br /><em>THE UNKNOWN.</em></h1>
+        <p class="hero-copy">Read the terrain. Trust your instincts. Make every move count.</p>
+        <div class="launch-grid">
+          <button class="launch-card primary" data-screen="offline">
+            <span class="card-index">01 / SOLO OPERATIONS</span><strong>OFFLINE PLAY</strong><span class="card-foot">Configure a field exercise <b>↗</b></span>
+          </button>
+          <button class="launch-card" data-screen="online">
+            <span class="card-index">02 / CONNECTED OPERATIONS</span><strong>ONLINE PLAY</strong><span class="card-foot">Network operations <b>↗</b></span>
+          </button>
+          <button class="launch-card compact" data-screen="customize">
+            <span class="card-index">03 / CONTROL SYSTEMS</span><strong>CUSTOMIZE LAYOUT</strong><span class="card-foot">Tune your controls <b>↗</b></span>
+          </button>
+          <button class="launch-card compact" data-screen="settings">
+            <span class="card-index">04 / SYSTEM CONFIG</span><strong>SETTINGS</strong><span class="card-foot">Graphics and audio <b>↗</b></span>
+          </button>
+        </div>
+        <div class="hero-bottom"><span>TACTICAL SURVIVAL EXPERIENCE</span><span>01 — 04 <i></i> EST. FIELD TEST</span></div>
+      </section>
+      <section class="panel hidden" id="offline-screen" aria-labelledby="offline-title">
+        <button class="back-link" data-screen="launch">← BACK TO BASE</button>
+        <div class="eyebrow">MISSION PARAMETERS / 01</div><h2 id="offline-title">OFFLINE <em>OPERATIONS</em></h2>
+        <p class="panel-copy">Set the conditions. The field will answer.</p>
+        <div class="config-grid">
+          <article class="config-card"><span class="card-index">01 / OPPOSING TEAMS</span><h3>TEAM COUNT</h3><div class="stepper"><button data-step="teams" data-delta="-1" aria-label="Decrease teams">−</button><output id="teams-value">2</output><button data-step="teams" data-delta="1" aria-label="Increase teams">+</button></div><small>2–8 TEAMS</small></article>
+          <article class="config-card"><span class="card-index">02 / FIELD POPULATION</span><h3>BOTS PER TEAM</h3><div class="stepper"><button data-step="bots" data-delta="-1" aria-label="Decrease bots">−</button><output id="bots-value">0</output><button data-step="bots" data-delta="1" aria-label="Increase bots">+</button></div><small>0–24 OPERATORS</small></article>
+        </div>
+        <div class="panel-actions"><button class="action-button" data-action="start-match">INITIALIZE FIELD <span>↗</span></button><span class="muted-note">Offline systems only · no network connection required</span></div>
+      </section>
+      <section class="panel hidden" id="online-screen">
+        <button class="back-link" data-screen="launch">← BACK TO BASE</button><div class="eyebrow">CONNECTED OPERATIONS / 02</div><h2>ONLINE <em>PLAY</em></h2>
+        <div class="notice-card"><span class="notice-icon">⌁</span><div><strong>NETWORK OPERATIONS NOT CONNECTED</strong><p>This destination is a UI placeholder. Multiplayer services are intentionally outside this build.</p></div></div>
+      </section>
+      <section class="panel hidden" id="settings-screen">
+        <button class="back-link" data-screen="launch">← BACK TO BASE</button><div class="eyebrow">SYSTEM CONFIGURATION / 04</div><h2>FIELD <em>SETTINGS</em></h2>
+        <div class="settings-list">
+          <label>GRAPHICS PROFILE<select id="quality-select"><option value="auto">AUTO — ADAPTIVE</option><option value="low">LOW — PERFORMANCE</option><option value="balanced">BALANCED</option><option value="high">HIGH — VISUAL</option></select></label>
+          <label>LOOK SENSITIVITY<input id="sensitivity" type="range" min="1" max="100" value="55" /><output id="sensitivity-value">55</output></label>
+          <label class="toggle-row">AMBIENT AUDIO <input type="checkbox" checked /></label>
+          <label class="toggle-row">REDUCED MOTION <input type="checkbox" /></label>
+        </div>
+      </section>
+      <section class="panel hidden" id="customize-screen">
+        <button class="back-link" data-screen="launch">← BACK TO BASE</button><div class="eyebrow">CONTROL SYSTEMS / 03</div><h2>CONTROL <em>LAYOUT</em></h2>
+        <div class="notice-card"><span class="notice-icon">✣</span><div><strong>LAYOUT EDITOR — NEXT MILESTONE</strong><p>Drag, resize, and position match controls will be enabled when the touch HUD is introduced. Your current layout is the default profile.</p></div></div>
+      </section>
+      <section class="panel hidden" id="match-screen">
+        <div class="match-top"><span class="live-dot"></span> FIELD EXERCISE ACTIVE <button data-action="pause">Ⅱ PAUSE</button></div>
+        <div class="match-center"><span class="eyebrow">SIMULATION FOUNDATION</span><h2>FIELD INITIALIZED</h2><p id="match-summary">Waiting for gameplay systems.</p><button class="action-button" data-action="end-match">RETURN TO BASE <span>↗</span></button></div>
+        <div class="match-footer"><span>PLAYER 01</span><span>TRAINING ENVIRONMENT</span><span>BUILD 0.1</span></div>
+      </section>
+      <div class="orientation-gate" id="orientation-gate"><div class="rotate-icon">▱</div><strong>ROTATE YOUR DEVICE</strong><span>LAST LIGHT IS BUILT FOR LANDSCAPE</span></div>
+      <footer class="global-footer"><span>© LAST LIGHT PROJECT</span><span>BUILT FOR THE FIELD <b>◆</b></span></footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
