@@ -4,7 +4,7 @@ A mobile-first, landscape 3D tactical survival game foundation. Original project
 
 ## Current milestone
 
-**Step 1 — application and renderer foundation.** The current build contains a responsive launch shell, offline match configuration, settings, layout/online placeholders, fullscreen/orientation handling, and a procedural Three.js menu environment. Combat, player movement, loot, bots, buildings, and match HUD are planned milestones, not yet implemented.
+**Step 1 — application and renderer foundation.** The current build contains a responsive launch shell with the 3D environment lazy-loaded as a separate bundle, offline match configuration, settings, layout/online placeholders, fullscreen/orientation handling, and a procedural Three.js menu environment. Combat, player movement, loot, bots, buildings, and match HUD are planned milestones, not yet implemented.
 
 See [PLAN.md](./PLAN.md) for the full architecture, asset policy, performance budgets, quality gates, and milestone sequence.
 
@@ -44,4 +44,4 @@ Do not add models, textures, fonts, or audio without recording source, license, 
 
 ## Deployment
 
-The client is a static Vite build. Render deployment should be configured after confirming the intended Render workspace and repository connection. Publish directory: `dist`; build command: `npm ci && npm run build`.
+The client is a static Vite build. Render deployment should be configured after confirming the intended Render workspace and repository connection. Publish directory: `dist`; build command: `npm install && npm run build`.
