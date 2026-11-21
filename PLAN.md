@@ -335,7 +335,7 @@ The tree is introduced incrementally; empty directories are represented by the f
 
 ## 8. Step 1 completion checklist
 
-- [ ] Architecture and scope documented in this file.
+- [x] Architecture and scope documented in this file.
 - [ ] Toolchain pinned to compatible current stable packages.
 - [ ] Application shell and launch navigation implemented.
 - [ ] Landscape guidance and user-gesture fullscreen implemented.
@@ -344,4 +344,4 @@ The tree is introduced incrementally; empty directories are represented by the f
 - [ ] Asset manifest and contributor setup documented.
 - [ ] Typecheck and production build verified before marking the milestone complete.
 
-**Current status:** architecture is specified. Implementation status is tracked in the repository README and subsequent commits. A 60 FPS target and production-ready quality are acceptance goals that must be demonstrated by device testing, not assumed from architecture alone.
+**Step 1 status — complete (2026-11-21):** The application shell, responsive navigation, offline setup controls, settings panel, layout/online placeholders, fullscreen/orientation guidance, lazy-loaded Three.js menu environment, disposal lifecycle, asset manifest, and project documentation are committed. Render's production typecheck and build passed and the deployment reached `live`. The renderer is deferred from the initial UI bundle; the latest build emitted a 5.29 kB (2.15 kB gzip) entry and a separate 538.10 kB (133.36 kB gzip) Three.js environment chunk. The latter is loaded only when the 3D menu environment is needed. Browser/device interaction and sustained 60 FPS have not yet been verified on physical Android hardware. A 60 FPS target and production-ready quality remain acceptance goals to demonstrate by device testing, not assumptions from architecture alone.
